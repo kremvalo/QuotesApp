@@ -1,10 +1,12 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import { useNavigation } from '@react-navigation/native';
+import { Text } from 'react-native';
 
 import theme from '../../themes';
+import { ROUTES } from '../../utils';
 
-import QuoteCard from '../../components/quoteCard';
+import { QuoteCard } from '../../components';
 
 import {
   MainWrapper,
@@ -12,15 +14,12 @@ import {
   MainTitleDescription,
   MainSubtitle,
 } from '../commonStyles';
-
 import {
   WrapperCreateQuote,
   WrapperButtonCircle,
-  WrapperRecentQuotes,
+  ScrollViewRecentQuotes,
   ButtonCreateQuote,
 } from './styles';
-import { Text } from 'react-native';
-import { ROUTES } from '../../utils';
 
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -43,7 +42,7 @@ const HomeScreen: React.FC = () => {
         </ButtonCreateQuote>
       </WrapperCreateQuote>
       <MainSubtitle>Recent Quotes</MainSubtitle>
-      <WrapperRecentQuotes>
+      <ScrollViewRecentQuotes>
         <QuoteCard
           id="Quote #1"
           date="08.02.2021"
@@ -51,7 +50,7 @@ const HomeScreen: React.FC = () => {
           price="10.00"
           key="Quote #1"
         />
-      </WrapperRecentQuotes>
+      </ScrollViewRecentQuotes>
     </MainWrapper>
   );
 };

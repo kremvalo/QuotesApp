@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-const MainWrapper = styled.View`
+const MainWrapper = styled.ScrollView`
   background-color: ${({ theme: { color } }) => color.lightGrey};
   flex: 1;
   padding: 20px 10px;

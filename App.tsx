@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
-import AppNavigator from './src/navigations';
+import AppNavigator from './src/core/navigations';
 
 import { ThemeProvider } from 'styled-components/native';
 

@@ -3,8 +3,8 @@ import styled from 'styled-components/native';
 const Wrapper = styled.View`
   padding: 10px;
   flex-direction: row;
-  justify-content: space-between;
   width: 100%;
+  align-items: center;
 `;
 
 const WrapperButtonCircle = styled.View`
@@ -19,48 +19,60 @@ const WrapperButtonCircle = styled.View`
 const WrapperInfo = styled.View`
   padding: 4px 20px 4px 10px;
   justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  width: 60%;
+  width: 45%;
 `;
 
-const WrapperPrice = styled.View`
-  justify-content: center;
+const WrapperPriceQuantity = styled.View`
   align-items: center;
+  padding: 10px;
 `;
 
-const QuoteId = styled.Text`
+const ProductId = styled.Text`
   font-weight: bold;
-  color: ${({ theme: { color } }) => color.black};
-  font-size: 12px;
+  color: ${({ theme: { color } }) => color.grey};
+  font-size: 10px;
   padding-bottom: 5px;
 `;
 
-const QuoteDate = styled.Text`
-  font-weight: bold;
-  color: ${({ theme: { color } }) => color.grey};
-  font-size: 12px;
-`;
-
-const QuoteName = styled.Text`
+const ProductName = styled.Text`
   font-weight: bold;
   color: ${({ theme: { color } }) => color.black};
   font-size: 12px;
 `;
 
-const QuotePrice = styled.Text`
+const ProductPrice = styled.Text`
   font-weight: bold;
   color: ${({ theme: { color } }) => color.menta};
   font-size: 20px;
+`;
+
+const QuantityText = styled.Text`
+  font-weight: bold;
+  color: ${({ theme: { color } }) => color.black};
+  opacity: 0.5;
+  font-size: 10px;
+`;
+
+const QuantityInput = styled.TextInput`
+  textalign: center;
+  padding: 2px 5px;
+  border-radius: 5px;
+  height: 20px;
+  width: 30px;
+  font-size: 10px;
+  border-width: 1px;
+  border-color: ${({ theme: { color } }) => color.blueLight};
+  background-color: ${({ theme: { color } }) => color.blueSuperLight};
 `;
 
 export {
   Wrapper,
   WrapperButtonCircle,
   WrapperInfo,
-  WrapperPrice,
-  QuoteId,
-  QuoteDate,
-  QuoteName,
-  QuotePrice,
+  WrapperPriceQuantity,
+  ProductId,
+  ProductName,
+  ProductPrice,
+  QuantityText,
+  QuantityInput,
 };

@@ -22,8 +22,9 @@ const WrapperButtonCircle = styled.View`
   align-items: center;
 `;
 
-const WrapperRecentQuotes = styled.ScrollView`
+const ScrollViewRecentQuotes = styled.ScrollView`
   height: 70%;
+  flex-grow: 1;
 `;
 
 const ButtonCreateQuote = styled.TouchableOpacity`
@@ -58,7 +59,7 @@ export {
   Wrapper,
   WrapperCreateQuote,
   WrapperButtonCircle,
-  WrapperRecentQuotes,
+  ScrollViewRecentQuotes,
   ButtonCreateQuote,
   Title,
   TitleDescription,

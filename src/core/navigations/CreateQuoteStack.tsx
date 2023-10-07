@@ -1,11 +1,10 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/FontAwesome6';
 
-import CreateQuoteScreen from '../features/createQuote';
+import CreateQuoteScreen from '../../features/createQuote';
 
-import { ROUTES } from '../utils';
-import theme from '../themes';
+import { ROUTES } from '../../utils';
+import theme from '../../themes';
 
 const Stack = createNativeStackNavigator();
 

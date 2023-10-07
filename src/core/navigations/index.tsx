@@ -2,25 +2,30 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 
-import theme from '../themes';
+import theme from '../../themes';
 
 import CreateQuoteStack from './CreateQuoteStack';
-import { ROUTES } from '../utils';
+import { ROUTES } from '../../utils';
 
-import HomeScreen from '../features/home';
+import HomeScreen from '../../features/home';
 import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
 function AppNavigator(): React.JSX.Element {
+  const navigation = useNavigation();
+  const blackColor = theme.color.black;
+
   const BackButton = ({ onPress }) => (
     <TouchableOpacity
       style={{
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-      }}>
-      <Icon name="chevron-left" size={25} color={theme.color.black} />
+      }}
+      onPress={onPress}>
+      <Icon name="chevron-left" size={25} color={blackColor} />
     </TouchableOpacity>
   );
 
@@ -41,19 +46,17 @@ function AppNavigator(): React.JSX.Element {
           position: 'absolute',
           borderTopWidth: 0,
         },
-        tabBarShowLabel: false, 
+        tabBarShowLabel: false,
       }}>
       <Tab.Screen
         name={ROUTES.HOME}
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="house" color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name="house" color={color} size={20} />
           ),
           title: 'Quotes',
-          headerLeft: () => (
-            <Icon name="bars" size={25} color={theme.color.black} />
-          ),
+          headerLeft: () => <Icon name="bars" size={25} color={blackColor} />,
           headerRight: () => (
             <Icon name="circle-user" size={35} color={theme.color.grey} solid />
           ),
@@ -63,13 +66,19 @@ function AppNavigator(): React.JSX.Element {
         name={ROUTES.CREATEQUOTE}
         component={CreateQuoteStack}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="arrow-right-arrow-left" color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name="arrow-right-arrow-left" color={color} size={20} />
           ),
           title: 'Create quote',
-          headerLeft: () => <BackButton onPress={() => { }} />,
+          headerLeft: () => (
+            <BackButton
+              onPress={() => {
+                navigation.goBack();
+              }}
+            />
+          ),
           headerRight: () => (
-            <Icon name="bell" size={20} color={theme.color.black} thin />
+            <Icon name="bell" size={20} color={blackColor} thin />
           ),
         }}
       />
@@ -78,8 +87,8 @@ function AppNavigator(): React.JSX.Element {
         component={CreateQuoteStack}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="credit-card" color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name="credit-card" color={color} size={20} />
           ),
         }}
       />
@@ -88,8 +97,8 @@ function AppNavigator(): React.JSX.Element {
         component={CreateQuoteStack}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="circle-user" color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Icon name="circle-user" color={color} size={20} />
           ),
         }}
       />

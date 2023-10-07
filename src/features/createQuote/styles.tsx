@@ -8,11 +8,23 @@ const ButtonCreateQuote = styled.TouchableOpacity`
   align-items: center;
 `;
 
-const TitleDescription = styled.Text`
-  margin-top: 5px;
-  font-weight: bold;
-  color: ${({ theme: { color } }) => color.grey};
-  font-size: 12px;
+const WrapperTotal = styled.View`
+  background-color: ${({ theme: { color } }) => color.white};
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-export { ButtonCreateQuote, TitleDescription };
+const TotalPrice = styled.Text`
+  font-weight: bold;
+  color: ${({ theme: { color } }) => color.menta};
+  font-size: 20px;
+`;
+
+const ScrollViewProducts = styled.ScrollView`
+  flex-grow: 1;
+`;
+
+export { ButtonCreateQuote, ScrollViewProducts, WrapperTotal, TotalPrice };
