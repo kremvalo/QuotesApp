@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 
 import { ClientInfo, ProductCard } from '../../components';
 
@@ -9,6 +8,7 @@ import {
   MainTitleDescription,
 } from '../commonStyles';
 import { ScrollViewProducts, WrapperTotal, TotalPrice } from './styles';
+import CustomButton from '../../components/customButton';
 
 const CreateQuoteScreen: React.FC = () => {
   return (
@@ -58,10 +58,7 @@ const CreateQuoteScreen: React.FC = () => {
         <MainTitleDescription>Total</MainTitleDescription>
         <TotalPrice>18.00 USD</TotalPrice>
       </WrapperTotal>
-      <WrapperTotal>
-        <MainTitleDescription>Total</MainTitleDescription>
-        <TotalPrice>18.00 USD</TotalPrice>
-      </WrapperTotal>
+      <CustomButton title={'Quote'} onPress={() => { }} />
     </MainWrapper>
   );
 };

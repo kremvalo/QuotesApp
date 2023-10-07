@@ -9,7 +9,7 @@ const Wrapper = styled.View`
 const WrapperCreateQuote = styled.View`
   flex-direction: row;
   justify-content: flex-end;
-  height: 15%;
+  height: 25%;
 `;
 
 const WrapperButtonCircle = styled.View`
