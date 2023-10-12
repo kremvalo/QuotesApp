@@ -45,7 +45,7 @@ const CreateQuoteScreen: React.FC = () => {
         {productList != null ? (
           productList.map(product => (
             <ProductCard
-              id={product.product_id}
+              id={product.product_code}
               name={product.product_name}
               price={product.product_price}
               isChecked
