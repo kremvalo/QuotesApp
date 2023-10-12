@@ -6,7 +6,7 @@ Aplicación desarrollada por Karen Moreno Arevalo, kren.thinker@gmail.com
 
 | Visual del App | Visual del App |
 | ---      | ---       | 
-| ![image](https://github.com/kremvalo/QuotesApp/assets/32576306/007edebc-19da-428b-abda-42e8ba6e3068)| ![image](https://github.com/kremvalo/QuotesApp/assets/32576306/d0bf8b80-d57e-46c2-a4a0-2e3f6478923d) |
+| ![image](https://github.com/kremvalo/QuotesApp/assets/32576306/007edebc-19da-428b-abda-42e8ba6e3068)| ![image](https://github.com/kremvalo/QuotesApp/assets/32576306/1e11678f-a485-438e-9a59-6c98fd60479f)|
 
 Construida con React Native y las siguientes herramientas adicionales: 
 
