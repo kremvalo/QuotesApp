@@ -43,11 +43,11 @@ const CreateQuoteScreen: React.FC = () => {
       <MainSubtitle>Choose Products</MainSubtitle>
       <ScrollViewProducts>
         {productList != null ? (
-          productList.map((product: IProduct) => (
+          productList.map(product => (
             <ProductCard
-              id={product.id}
-              name={product.name}
-              price={product.price}
+              id={product.product_id}
+              name={product.product_name}
+              price={product.product_price}
               isChecked
               onChangeChecked={() => { }}
               onChangeQuantity={() => { }}

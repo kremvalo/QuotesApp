@@ -19,7 +19,7 @@ const WrapperButtonCircle = styled.View`
 const WrapperInfo = styled.View`
   padding: 4px 20px 4px 10px;
   justify-content: space-between;
-  width: 45%;
+  width: 38%;
 `;
 
 const WrapperPriceQuantity = styled.View`
