@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import { useNavigation } from '@react-navigation/native';
 import { Text } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../core/redux/store';
 
 import theme from '../../themes';
 import { ROUTES } from '../../utils';
-import { getProductsAsync } from './slice';
 
 import { QuoteCard } from '../../components';
 
@@ -25,12 +22,7 @@ import {
 } from './styles';
 
 const HomeScreen: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
   const navigation = useNavigation();
-
-  useEffect(() => {
-    dispatch(getProductsAsync());
-  }, [dispatch]);
 
   return (
     <MainWrapper>

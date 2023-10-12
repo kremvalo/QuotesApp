@@ -4,13 +4,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default (() => {
   const dev = {
     api: {
-      host: 'https://restaurants2.free.beeceptor.com',
+      host: 'http://0.0.0.0:8080',
     },
   };
 
   const prod = {
     api: {
-      host: 'https://restaurants2.free.beeceptor.com',
+      host: 'http://0.0.0.0:8080',
     },
   };
 

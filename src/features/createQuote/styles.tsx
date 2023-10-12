@@ -25,6 +25,7 @@ const TotalPrice = styled.Text`
 
 const ScrollViewProducts = styled.ScrollView`
   flex-grow: 1;
+  height: 250px;
 `;
 
 export { ButtonCreateQuote, ScrollViewProducts, WrapperTotal, TotalPrice };

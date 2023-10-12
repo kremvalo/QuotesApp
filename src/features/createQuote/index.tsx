@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { ClientInfo, ProductCard } from '../../components';
+import {
+  ClientInfo,
+  ProductCard,
+  CustomButton,
+  Loader,
+} from '../../components';
 
 import {
   MainWrapper,
@@ -8,51 +13,49 @@ import {
   MainTitleDescription,
 } from '../commonStyles';
 import { ScrollViewProducts, WrapperTotal, TotalPrice } from './styles';
-import CustomButton from '../../components/customButton';
+import { getProductsAsync } from './slice';
+import { AppDispatch } from '../../core/redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { IProduct } from '../../core/types';
 
 const CreateQuoteScreen: React.FC = () => {
-  return (
+  const dispatch = useDispatch<AppDispatch>();
+
+  const { loading, productList } = useSelector(
+    (state: any) => state.createQuote,
+  );
+  console.log('state', productList);
+
+  useEffect(() => {
+    dispatch(getProductsAsync());
+  }, [dispatch]);
+
+  return loading ? (
+    <Loader />
+  ) : (
     <MainWrapper>
       <ClientInfo
-        name={'pepe'}
-        lastname={'fernandez'}
+        name={'Pepe'}
+        lastname={'Fernandez'}
         date={'2023-23-2'}
         address={'Cr 24 # 3a-20'}
       />
       <MainSubtitle>Choose Products</MainSubtitle>
       <ScrollViewProducts>
-        <ProductCard
-          id={'Brav-10'}
-          name={'Product #1'}
-          price={6.0}
-          isChecked
-          onChangeChecked={() => { }}
-          onChangeQuantity={() => { }}
-        />
-        <ProductCard
-          id={'Brav-10'}
-          name={'Product #1'}
-          price={6.0}
-          isChecked
-          onChangeChecked={() => { }}
-          onChangeQuantity={() => { }}
-        />
-        <ProductCard
-          id={'Brav-10'}
-          name={'Product #1'}
-          price={6.0}
-          isChecked
-          onChangeChecked={() => { }}
-          onChangeQuantity={() => { }}
-        />
-        <ProductCard
-          id={'Brav-10'}
-          name={'Product #1'}
-          price={6.0}
-          isChecked
-          onChangeChecked={() => { }}
-          onChangeQuantity={() => { }}
-        />
+        {productList != null ? (
+          productList.map((product: IProduct) => (
+            <ProductCard
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              isChecked
+              onChangeChecked={() => { }}
+              onChangeQuantity={() => { }}
+            />
+          ))
+        ) : (
+          <MainSubtitle>Without Products</MainSubtitle>
+        )}
       </ScrollViewProducts>
       <WrapperTotal>
         <MainTitleDescription>Total</MainTitleDescription>

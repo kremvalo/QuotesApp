@@ -1,11 +1,11 @@
 export interface InitialState {
   loading: boolean;
   error: string | null;
-  products: IProduct[];
+  productList: IProduct[] | null;
 }
 
 export interface IProduct {
   id: string;
   name: string;
-  price: string;
+  price: number;
 }
